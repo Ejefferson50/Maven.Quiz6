@@ -6,7 +6,12 @@ public class BasicStringUtils {
      * @return new String which wraps the arguments passed in
      */
     public static String getString(char[] chars) {
-        return null;
+        String result = "";
+        for(int i = 0; i < chars.length; i++){
+            result += String.valueOf(chars[i]);
+
+        }
+        return result;
     }
 
     /**
@@ -14,7 +19,11 @@ public class BasicStringUtils {
      * @return new String which wraps the arguments passed in
      */
     public static String getString(Character[] chars) {
-        return null;
+        String result = "";
+        for(Character c: chars){
+            result += String.valueOf(c);
+        }
+        return result;
     }
 
     /**
@@ -22,7 +31,8 @@ public class BasicStringUtils {
      * @return identical string with lowercase and uppercase vowels removed
      */
     public static String removeAllVowels(String string) {
-        return null;
+        String update = string.replaceAll("[A,a,E,e,I,i,O,o,U,u]", "");
+        return update;
     }
 
     /**
@@ -31,6 +41,12 @@ public class BasicStringUtils {
      * @return
      */
     public static String removeSpecifiedCharacters(String string, String charactersToRemove) {
-        return null;
+        char[] removies = charactersToRemove.toCharArray();
+        for(int i = 0; i < removies.length; i++){
+            String removal = String.valueOf(removies[i]);
+            string = string.replaceAll(removal, "");
+        }
+        return string;
+
     }
 }
